@@ -1,0 +1,15 @@
+def bubble_sort(arr):
+    n = len(arr)
+    # 모든 요소를 비교하기 위해 외부 반복문
+    for i in range(n):
+        # 마지막 i개 요소는 이미 정렬되었으므로 제외
+        for j in range(0, n - i - 1):
+            # 오름차순 정렬을 위해 현재 요소가 다음 요소보다 크면 교환
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+# 예시 배열
+my_list = [64, 34, 25, 12, 22, 11, 90]
+sorted_list = bubble_sort(my_list)
+print("정렬된 리스트:", sorted_list)
